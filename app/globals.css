@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --color-sand-50: #fcfaf9;
+  --color-sand-100: #f6f3ef;
+  --color-sand-300: #e3ded5;
+  --color-sand-400: #cbbea5;
+  --color-sand-600: #9c8e76;
+
+  --color-grenat-950: #310c14;
+  --color-grenat-900: #4a131e;
+  --color-grenat-800: #711f30;
+  --color-grenat-700: #932a3e;
+  --color-grenat-300: #df8a9a;
+  --color-grenat-200: #efb5c3;
+  --color-grenat-100: #fae1e6;
+
+  --color-rose-800: #881b31;
+  --color-rose-700: #ab2746;
+  --color-rose-600: #cb385b;
+  --color-rose-500: #e25574;
+  --color-rose-400: #f1879f;
+  --color-rose-200: #fce2e8;
+
+  --color-gold-500: #af8230;
+  --color-gold-400: #c9973e;
+  --color-gold-300: #e1b96d;
+
+  --color-ink-800: #3b2327;
+  --color-ink-700: #553b3f;
+  --color-ink-600: #7a5f63;
+  --color-ink-500: #a0888c;
+}
+
+@theme inline {
+  --color-background: var(--color-sand-50);
+  --color-foreground: var(--color-ink-800);
+  --font-sans: var(--font-body);
+}
+
+body {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(241, 135, 159, 0.15), transparent 38%),
+    radial-gradient(circle at 85% 0%, rgba(225, 185, 109, 0.12), transparent 42%),
+    linear-gradient(180deg, var(--color-sand-50) 0%, var(--color-sand-100) 100%);
+  color: var(--color-ink-800);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.01em;
+}
+
+a {
+  transition: color 160ms ease;
+}
+
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-shell {
+  width: min(1160px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  transform: translateY(-200%);
+  border-radius: 0.75rem;
+  background: var(--color-grenat-900);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  z-index: 200;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0%);
+}
+
+*:focus-visible {
+  outline: 3px solid var(--color-gold-300);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .container-shell {
+    width: min(1160px, calc(100% - 1.2rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
